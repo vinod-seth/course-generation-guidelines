@@ -41,16 +41,45 @@ Every individual lesson markdown file must adhere to the following sequence of s
 
 ---
 
-## 3. Metadata and Taxonomy Fields
+## 3. Metadata and Taxonomy Fields & Curriculum Manifest
 
-Each course must specify its categorization details in a root `metadata.json` file. The schema is:
+Each course must specify its categorization details and full curriculum manifest in a root `metadata.json` file. The schema is:
 
-- `course_title`: Clean title of the course.
-- `domain`: High-level category (e.g., `Software Engineering`, `Generative AI`, `Cloud Infrastructure`, `Security`).
-- `tech_stack`: List of primary technologies used (e.g., `["Python", "FastAPI", "Google GenAI SDK"]`).
-- `difficulty`: One of `Beginner`, `Intermediate`, `Advanced`.
-- `prerequisites`: List of required courses or skills.
-- `estimated_hours`: Total time required for course completion.
+```json
+{
+  "title": "Course Title Here",
+  "domain": "Generative AI",
+  "tech_stack": ["Python", "Hugging Face", "PyTorch"],
+  "difficulty": "beginner",
+  "prerequisites": ["Basic Python"],
+  "estimated_hours": 10,
+  "modules": 7,
+  "lessons": 18,
+  "version": "1.1",
+  "curriculum": [
+    {
+      "module_id": "module_01",
+      "title": "Module 1: Title",
+      "lessons": [
+        {
+          "id": "m1_l1",
+          "title": "Lesson 1 Title",
+          "defaultMode": "mdx",
+          "modes": {
+            "mdx": "tutorial/01_module/01_lesson.md",
+            "notebook": "tutorial/01_module/01_lesson.ipynb"
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+### Key Requirements for Curriculum Manifest & Multi-Format Modes:
+1. **Single Logical Lesson Entity**: In `metadata.json`, each lesson must be registered once under the `lessons` array. Never create duplicate lesson entries for different format representations.
+2. **Multi-Format Mode Pairings**: When a lesson provides both static reading content (Markdown `.md`/`.mdx`) and interactive code (Jupyter Notebook `.ipynb`), they must be mapped under the `modes` dictionary object.
+3. **Default Mode Specification**: Define `defaultMode` (typically `"mdx"`) for every lesson to instruct learning portals on which format view to display by default.
 
 ---
 
