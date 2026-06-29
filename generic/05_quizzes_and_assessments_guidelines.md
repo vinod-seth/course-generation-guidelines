@@ -77,11 +77,12 @@ Every course must end with a comprehensive Capstone Project or final lab. The ca
 Every generated course MUST provide a production-grade, comprehensive interview preparation suite. Every core technical lesson must include an `interview` mode mapping to a structured `.json` question bank, and the course root must include a dedicated **Comprehensive Course Interview Suite**.
 
 ### Interview Question JSON Schema & Rules:
-1. **Experience-Tiered Divisions**: Questions must be categorized into `junior` (0-2y), `mid_level` (3-5y), and `senior` (6+y) experience buckets.
-2. **Complexity Classifications**: Each question must specify its complexity rating: `'Easy'`, `'Medium'`, `'Hard'`, or `'System Design'`.
-3. **Target Company Tags**: Tag questions based on top-tier company interview loops: `'Google'`, `'Meta'`, `'OpenAI'`, `'Anthropic'`, or `'General'`.
-4. **Candidate Preparation Guidance**: Provide a high-level `preparation_guide` instructing the candidate on how to approach the answer, along with `star_framework_tip` structuring advice.
-5. **Production-Grade Explanations & Pitfalls**: Provide in-depth explanations with code examples, list `common_pitfalls` ("what candidates get wrong"), and attach official documentation/paper `references`.
+1. **Experience-Tiered Divisions**: Questions must be categorized into `junior` (0-2y), `mid_level` (3-5y), and `senior` (6+y) experience buckets. Each tier MUST contain **multiple questions** (minimum 2-3 questions per tier).
+2. **Clean & Authentic Question Wording**: Questions MUST be generic, professional interview questions focused purely on the technical subject matter. **NEVER** mention chapter numbers, module prefixes, or file names in the question text (e.g. do NOT write "Explain Chapter 02 Variables...").
+3. **Complexity Classifications**: Each question must specify its complexity rating: `'Easy'`, `'Medium'`, `'Hard'`, or `'System Design'`.
+4. **Target Company Tags**: Tag questions based on top-tier company interview loops: `'Google'`, `'Meta'`, `'OpenAI'`, `'Anthropic'`, or `'General'`.
+5. **Candidate Preparation Guidance**: Provide a high-level `preparation_guide` instructing the candidate on how to approach the answer, along with `star_framework_tip` structuring advice.
+6. **Production-Grade Explanations & Pitfalls**: Provide in-depth explanations with code examples, list `common_pitfalls` ("what candidates get wrong"), and attach official documentation/paper `references`.
 
 ### Schema Example:
 ```json
