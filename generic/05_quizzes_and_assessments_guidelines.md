@@ -1,15 +1,26 @@
 # Course Generation Guideline: Quizzes & Assessments
 
-This guideline details the structural and syntax requirements for creating interactive concept checks, chapter quizzes, and final capstone project assessments. Following these formats enables the learning platform to parse and render assessments correctly.
+This guideline details the structural, numerical volume, and syntax requirements for creating interactive concept checks, chapter quizzes, comprehensive final assessments, and interview test suites across all course repositories. Following these formats enables autonomous course generators and review agents to validate course completeness.
 
 ---
 
-## 1. GFM Interactive Quiz Syntax
+## 1. Chapter/Module Question Volume Mandate (Minimum 20 Questions)
 
-Concept checks must be written at the end of each lesson to support interactive rendering in the portal.
+Every generated module or chapter in a course MUST contain **at least 20 questions** distributed across interactive concept checks, chapter quizzes, and practice exercises.
+
+### Distribution Requirements per Chapter:
+- **Lesson Concept Checks**: 2 to 4 interactive GFM checkbox questions per individual lesson.
+- **End-of-Chapter Quiz Bank**: Comprehensive practice set bringing the total question count for the chapter/module to **at least 20 distinct questions**.
+- **Question Types**: Questions must cover conceptual understanding, code output prediction, debugging scenarios, and architecture trade-offs.
+
+---
+
+## 2. GFM Interactive Quiz Syntax
+
+Concept checks and chapter quizzes must be written to support interactive rendering in the portal.
 
 ### Syntax Rules:
-- **Section Heading**: Use `## 🟢 Concept Check` or `## Concept Check`.
+- **Section Heading**: Use `## 🟢 Concept Check` or `## 📝 Chapter Quiz`.
 - **Question Format**: State the question in plain text, followed by options.
 - **GFM Checkboxes**: Use checkbox syntax for answer options:
   - Correct answer option: `* [x] [Option Text]`
@@ -29,7 +40,7 @@ What is the correct way to initialize the modern Google GenAI SDK client in Pyth
 
 ---
 
-## 2. Click-to-Reveal Solutions
+## 3. Click-to-Reveal Solutions
 
 To prevent spoiling answers immediately, detailed explanations must be wrapped in HTML details blocks.
 
@@ -52,7 +63,7 @@ The new Google GenAI SDK uses the `google` root package namespace and instantiat
 
 ---
 
-## 3. Question Variety & Pedagogy
+## 4. Question Variety & Pedagogy
 
 Do not rely solely on simple factual multiple-choice questions. Quizzes should evaluate deeper comprehension:
 - **Debugging Challenges**: Provide a snippet of broken code or prompt, and ask the student to identify the error or the fix.
@@ -61,20 +72,23 @@ Do not rely solely on simple factual multiple-choice questions. Quizzes should e
 
 ---
 
-## 4. Capstone Project Rubrics
+## 5. Mandatory Final Assessment & Capstone Rubrics
 
-Every course must end with a comprehensive Capstone Project or final lab. The capstone instructions must include a **Self-Assessment Rubric** with measurable success criteria:
+Every course MUST include a formal, cumulative **Final Assessment** and a practical **Capstone Project**.
 
-- **Accuracy/Quality**: Expected behavior of the finalized system (e.g., correct JSON structure, grounding check results).
-- **Performance Benchmarks**: Feasible latency thresholds (e.g. initial token under 800ms) or model constraints.
-- **Cost Efficiency**: Guidance on prompt token count optimization (e.g., incorporating caching).
-- **Grading Scale**: A table detailing expectations for `Excellent (Pass)`, `Satisfactory`, and `Needs Improvement`.
+### Requirements:
+1. **Cumulative Final Assessment**: A dedicated comprehensive exam covering all modules in the course. Must evaluate synthesis of concepts across the entire curriculum.
+2. **Capstone Project Rubric**: The capstone project instructions must include a **Self-Assessment Rubric** with measurable success criteria:
+   - **Accuracy/Quality**: Expected behavior of the finalized system (e.g., correct JSON structure, grounding check results).
+   - **Performance Benchmarks**: Feasible latency thresholds (e.g. initial token under 800ms) or model constraints.
+   - **Cost Efficiency**: Guidance on prompt token count optimization (e.g., incorporating caching).
+   - **Grading Scale**: A table detailing expectations for `Excellent (Pass)`, `Satisfactory`, and `Needs Improvement`.
 
 ---
 
-## 5. Production-Grade Tier-1 Interview Suite Mandate
+## 6. Production-Grade Tier-1 Interview Test Suite Mandate
 
-Every generated course MUST provide a production-grade, comprehensive interview preparation suite. Every core technical lesson must include an `interview` mode mapping to a structured `.json` question bank, and the course root must include a dedicated **Comprehensive Course Interview Suite**.
+Every generated course MUST provide a production-grade, comprehensive **Interview Test Suite**. Every core technical lesson must include an `interview` mode mapping to a structured `.json` question bank, and the course root must include a dedicated **Comprehensive Course Interview Suite**.
 
 ### Interview Question JSON Schema & Rules:
 1. **Experience-Tiered Divisions**: Questions must be categorized into `junior` (0-2y), `mid_level` (3-5y), and `senior` (6+y) experience buckets. Each tier MUST contain **multiple questions** (minimum 2-3 questions per tier).

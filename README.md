@@ -36,9 +36,10 @@ Please refer to the separate guidelines below for specific areas of course gener
    - **[C Standards](file:///c:/vinod/course-generation-guidelines/tech_specific/c_guidelines.md)**: Makefiles, memory safety (`malloc`/`free`), and libcurl integration.
 
 6. **[05 Quizzes & Assessments Guidelines](file:///c:/vinod/course-generation-guidelines/generic/05_quizzes_and_assessments_guidelines.md)**
-   - Markdown formatting for interactive checkbox quizzes.
-   - Collapsible click-to-reveal explanation blocks.
-   - Creating capstone project evaluation rubrics.
+   - Minimum volume mandate of at least 20 questions per chapter/module across quizzes and practice sets.
+   - Markdown formatting for interactive checkbox quizzes and click-to-reveal explanation blocks.
+   - Mandating formal final assessments and capstone project evaluation rubrics.
+   - Production-grade tier-1 interview test suite requirements and JSON schemas.
 
 ---
 
