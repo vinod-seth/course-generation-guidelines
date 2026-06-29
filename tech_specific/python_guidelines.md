@@ -108,3 +108,11 @@ Both companion files must be registered under a single logical lesson entry in t
   "notebook": "tutorial/01_module/01_lesson.ipynb"
 }
 ```
+
+### 3. Google Colab Integration & Launch Badge Requirement
+Every generated Python Jupyter Notebook (`.ipynb`) and its companion Markdown file **MUST** include a standard "Open in Colab" badge at the very top of the document (right below the main title header). This provides zero-friction, one-click execution for learners in Google Colab.
+
+*Badge Syntax Example:*
+```markdown
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/{owner}/{repo}/blob/{branch}/{path_to_notebook})
+```
