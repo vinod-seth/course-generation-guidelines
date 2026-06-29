@@ -91,3 +91,20 @@ recipe = completion.choices[0].message.parsed
 ### C. Anthropic SDK
 - **Initialization**: `import anthropic` and `client = anthropic.Anthropic()`
 - **Rules**: Specify system instructions as top-level parameters in the `messages.create()` call. Use XML tags (e.g. `<rules>`) to structure inputs.
+
+---
+
+## 4. Multi-Format Lab Generation Mandate (Notebook + MDX)
+
+Whenever Python or executable code is used in a course, the autonomous generator **MUST** generate dual companion formats for every core technical lesson:
+
+1. **Interactive Jupyter Notebook (`.ipynb`)**: Executable code cells enabling learners to run, test, and experiment with Python code interactively in Jupyter, VS Code, or Google Colab.
+2. **Static Reading Document (`.md` / `.mdx`)**: Formatted reading guide containing theoretical background, inline code blocks, and architecture diagrams.
+
+Both companion files must be registered under a single logical lesson entry in the root `metadata.json` file using the `modes` dictionary object:
+```json
+"modes": {
+  "mdx": "tutorial/01_module/01_lesson.md",
+  "notebook": "tutorial/01_module/01_lesson.ipynb"
+}
+```
