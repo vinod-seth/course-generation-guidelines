@@ -69,3 +69,41 @@ Every course must end with a comprehensive Capstone Project or final lab. The ca
 - **Performance Benchmarks**: Feasible latency thresholds (e.g. initial token under 800ms) or model constraints.
 - **Cost Efficiency**: Guidance on prompt token count optimization (e.g., incorporating caching).
 - **Grading Scale**: A table detailing expectations for `Excellent (Pass)`, `Satisfactory`, and `Needs Improvement`.
+
+---
+
+## 5. Production-Grade Tier-1 Interview Suite Mandate
+
+Every generated course MUST provide a production-grade, comprehensive interview preparation suite. Every core technical lesson must include an `interview` mode mapping to a structured `.json` question bank, and the course root must include a dedicated **Comprehensive Course Interview Suite**.
+
+### Interview Question JSON Schema & Rules:
+1. **Experience-Tiered Divisions**: Questions must be categorized into `junior` (0-2y), `mid_level` (3-5y), and `senior` (6+y) experience buckets.
+2. **Complexity Classifications**: Each question must specify its complexity rating: `'Easy'`, `'Medium'`, `'Hard'`, or `'System Design'`.
+3. **Target Company Tags**: Tag questions based on top-tier company interview loops: `'Google'`, `'Meta'`, `'OpenAI'`, `'Anthropic'`, or `'General'`.
+4. **Candidate Preparation Guidance**: Provide a high-level `preparation_guide` instructing the candidate on how to approach the answer, along with `star_framework_tip` structuring advice.
+5. **Production-Grade Explanations & Pitfalls**: Provide in-depth explanations with code examples, list `common_pitfalls` ("what candidates get wrong"), and attach official documentation/paper `references`.
+
+### Schema Example:
+```json
+{
+  "lesson_title": "SLM Optimization",
+  "experience_levels": {
+    "senior": [
+      {
+        "id": "q1",
+        "question": "How do you mitigate memory bottlenecks when serving a quantized 3B SLM under high concurrency?",
+        "complexity": "System Design",
+        "companies": ["Google", "OpenAI"],
+        "core_intent": "Evaluates knowledge of vLLM, PagedAttention, and KV-cache management.",
+        "preparation_guide": "Focus on memory allocation during continuous batching and KV-cache paging.",
+        "explanation": "To achieve high concurrency, standard KV-cache allocations cause fragmentation...",
+        "star_framework_tip": "Outline the problem (fragmentation), explain PagedAttention, and detail latency metrics.",
+        "common_pitfalls": ["Confusing model weights memory with dynamic KV-cache memory"],
+        "references": [
+          { "title": "vLLM PagedAttention Paper", "url": "https://arxiv.org/abs/2309.06180" }
+        ]
+      }
+    ]
+  }
+}
+```
