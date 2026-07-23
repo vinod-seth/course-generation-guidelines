@@ -62,7 +62,7 @@ Publishing publicly requires the candidate's **explicit, informed** consent — 
 
 ## 4. Assessment Data Is Sensitive Too
 
-Scores, gap maps, floor-hit logs, and mock-round transcripts are candid records of someone's weaknesses. Treat them with the same care as identifiers:
+Scores, gap maps, weak-spot logs, and mock-round transcripts are candid records of someone's weaknesses. Treat them with the same care as identifiers:
 
 - Keep them inside the private course repository.
 - Never quote a named candidate's scores or failures into a shared template, example, or another course.
@@ -87,7 +87,7 @@ To reuse a real course as a template or example:
 1. Replace the name with a role descriptor ("the candidate").
 2. Replace employers/universities with generic equivalents ("a large e-commerce company").
 3. Replace every metric with `[FILL: metric]` — never carry a real person's numbers into a template.
-4. Strip scores, gap maps, and floor-hit logs entirely.
+4. Strip scores, gap maps, and weak-spot logs entirely.
 5. Retain only **structure**: chapter shapes, rubrics, question patterns.
 
 ---

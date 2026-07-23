@@ -86,9 +86,9 @@ Does the resume advertise depth the candidate actually has?
 ### Bands
 | Score | Band | Meaning |
 |---|---|---|
-| 85–100 | **Gold** | Defensible throughout; interrogation is an opportunity |
-| 70–84 | **Silver** | Sound, with identified soft spots |
-| 50–69 | **Bronze** | Real content, but exposed claims need work before the loop |
+| 85–100 | **Strong** | Defensible throughout; interrogation is an opportunity |
+| 70–84 | **Sound** | Solid overall, with identified soft spots |
+| 50–69 | **Needs Work** | Real content, but exposed claims need work before the loop |
 | < 50 | **At Risk** | Overclaiming or unverifiable content likely to be caught |
 
 ---

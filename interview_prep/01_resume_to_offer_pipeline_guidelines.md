@@ -143,11 +143,12 @@ Strong candidates over-prepare their strengths. The plan must actively resist th
 
 One module per round in the dossier. Standard technical-course guidelines apply in full here.
 
-Reference implementation: `local-courses-repo/Applied-Scientist-Interview-Gauntlet`. Reusable patterns:
-- Tiered mastery (knows it / can derive it / **can defend it against five follow-ups**)
-- Points for surviving depth, never for completion
-- Boss-fight round simulations that gate progress
-- Floor-hit mapping — where depth ran out, reframed as the next study map
+**Keep the format simple — no game mechanics.** No points/XP, no medal tiers, no boss fights, no streaks, no progress gating. The course is drills, model answers, mock rounds, and honest self-assessment; nothing is locked and nothing is scored for its own sake.
+
+Reference implementation: `local-courses-repo/Applied-Scientist-Interview-Gauntlet` — note it predates this rule and still carries game mechanics; reuse its *content* patterns, not its scoring. Reusable patterns:
+- Mastery stated plainly per topic: knows it / can derive it / **can defend it against five follow-ups**
+- Mock-round simulations with honest written feedback
+- A record of where depth ran out, reframed as the next study map
 - Interactive companion notebooks that produce evidence rather than assurances
 
 ---
