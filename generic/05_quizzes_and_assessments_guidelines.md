@@ -97,11 +97,29 @@ Every generated course MUST provide a production-grade, comprehensive **Intervie
 4. **Target Company Tags**: Tag questions based on top-tier company interview loops: `'Google'`, `'Meta'`, `'OpenAI'`, `'Anthropic'`, or `'General'`.
 5. **Candidate Preparation Guidance**: Provide a high-level `preparation_guide` instructing the candidate on how to approach the answer, along with `star_framework_tip` structuring advice.
 6. **Production-Grade Explanations & Pitfalls**: Provide in-depth explanations with code examples, list `common_pitfalls` ("what candidates get wrong"), and attach official documentation/paper `references`.
+7. **Interactive Mock Interview & Rehearsal Studio**:
+   To enable turn-by-turn interactive audio/video rehearsal in the portal's Interview Hub, the JSON MUST include a `"rehearsal"` configuration block:
+   - `prompt`: The overall preparation guidance.
+   - `minSeconds`: Target minimum spoken duration.
+   - `maxSeconds`: Target maximum spoken duration.
+   - `rubric`: Rubric identifier.
+   - `questions`: A list of questions/follow-ups asked during the turn-by-turn mock round. The questions list must prepare the candidate for *all* core questions and follow-ups asked in the lesson.
 
 ### Schema Example:
 ```json
 {
   "lesson_title": "SLM Optimization",
+  "rehearsal": {
+    "prompt": "Practice defending the SLM optimization project...",
+    "minSeconds": 180,
+    "maxSeconds": 300,
+    "rubric": "slm-optimization-rubric",
+    "questions": [
+      "How do you mitigate memory bottlenecks when serving a quantized 3B SLM under high concurrency?",
+      "Walk me through your memory budget details under dual-GPU serving.",
+      "What are the latency metrics when scaling to 100 concurrent requests?"
+    ]
+  },
   "experience_levels": {
     "senior": [
       {

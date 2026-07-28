@@ -145,15 +145,61 @@ One module per round in the dossier. Standard technical-course guidelines apply 
 
 **Keep the format simple — no game mechanics.** No points/XP, no medal tiers, no boss fights, no streaks, no progress gating. The course is drills, model answers, mock rounds, and honest self-assessment; nothing is locked and nothing is scored for its own sake.
 
-Reference implementation: `local-courses-repo/Applied-Scientist-Interview-Gauntlet` — note it predates this rule and still carries game mechanics; reuse its *content* patterns, not its scoring. Reusable patterns:
+Reference implementation: `local-courses-repo/Applied-Scientist-Interview-Gauntlet` — clean standard course model (mastery tiers, assessments, gap logs, companion notebooks). Reusable patterns:
 - Mastery stated plainly per topic: knows it / can derive it / **can defend it against five follow-ups**
 - Mock-round simulations with honest written feedback
-- A record of where depth ran out, reframed as the next study map
+- A record of where depth ran out, reframed as the next study map (gap log)
 - Interactive companion notebooks that produce evidence rather than assurances
 
 ---
 
-## 9. Final — Mock Loop & Readiness Call
+## 9. Every Chapter Ends in Spoken Rehearsal (mandatory)
+
+**An interview is spoken. A course that is only read prepares the wrong skill.** Every chapter that teaches something the candidate will have to *say* must ship a rehearsal where they say it out loud, get evaluated, and refine — not just a reading and a quiz.
+
+### The rule
+
+| Chapter type | Rehearsal it must carry |
+|---|---|
+| Round-prep / project defence | Deliver the project pitch, then answer that chapter's hardest follow-ups |
+| Fundamentals / breadth | Rapid-fire: each fundamental answered in one or two sentences, under time |
+| The Introduction | The base introduction plus each per-round variant |
+| Tech-stack / terminology | One term at a time: define it, then survive the follow-up |
+| Behavioural / LP | Each STAR story delivered end to end |
+| Research, audit, planning chapters (target lock, company dossier, gap map) | **Exempt** — nothing here is spoken to an interviewer |
+
+### Requirements
+
+1. **Iterative, not one-shot.** The loop is answer → evaluate → coach → re-attempt → re-evaluate, continuing until the answer would satisfy a real interviewer. A single graded attempt is a test, not a rehearsal.
+2. **Progressive feedback.** Each evaluation must know about the previous attempts, so it can acknowledge what improved instead of repeating itself.
+3. **The candidate can always move on.** Readiness is advice, never a gate.
+4. **Questions come from the chapter.** Rehearsal questions are the chapter's own interrogation surface — reuse the interview-suite questions rather than inventing a parallel set.
+5. **Model answers are revealable.** After attempting, the candidate can compare against a detailed model answer — deeper than a one-line definition, with `[FILL: metric]` where their own numbers belong.
+6. **Never rewards fabrication.** The evaluator must flag invented or oddly precise numbers; "I'd have to check the exact figure" is the correct answer.
+
+### Where it lives
+
+Rehearsal is authored in the chapter's **interview-questions JSON**, as a `rehearsal` object beside `experience_levels`, so the portal renders it at the top of that chapter's Interview Hub. Field definitions live in [generic guideline 05](../generic/05_quizzes_and_assessments_guidelines.md) — this section governs *which* chapters must carry one and *how the loop must behave*:
+
+```json
+{
+  "lesson_title": "…",
+  "rehearsal": {
+    "prompt": "What the candidate should deliver, and how to open.",
+    "rubric": "project-pitch | tech-term | mechanism | introduction",
+    "minSeconds": 180,
+    "maxSeconds": 300,
+    "questions": ["…asked one at a time, spoken aloud…"]
+  },
+  "experience_levels": { "junior": [], "mid_level": [], "senior": [] }
+}
+```
+
+A chapter may *additionally* embed an inline drill in its markdown where rehearsing mid-lesson is pedagogically better (for example, immediately after a hands-on lab that produces the pitch). The JSON block is the requirement; the inline drill is optional.
+
+---
+
+## 10. Final — Mock Loop & Readiness Call
 
 - Full simulated loop in the dossier's real order.
 - **Re-score** against the Chapter 2 baseline; show the delta.
@@ -161,7 +207,7 @@ Reference implementation: `local-courses-repo/Applied-Scientist-Interview-Gauntl
 
 ---
 
-## 10. Reviewer Checklist
+## 11. Reviewer Checklist
 
 ```markdown
 - [ ] Chapters generated in pipeline order; no chapter depends on a later one.
@@ -171,6 +217,7 @@ Reference implementation: `local-courses-repo/Applied-Scientist-Interview-Gauntl
 - [ ] Chapter 3 contains only terms present on the resume, ordered by interrogation risk, each with a hover definition and a self-check.
 - [ ] Introduction includes per-round variants and an explicit omissions list.
 - [ ] Gap map is risk-weighted, time-boxed, and separates closable from structural gaps.
+- [ ] Every non-exempt chapter ships a spoken rehearsal (`rehearsal` block in its interview JSON): iterative, progressive feedback, never gating, questions drawn from that chapter.
 - [ ] Readiness call is capable of returning "not ready".
 - [ ] No fabricated candidate metrics; unbacked numbers appear as [FILL: metric].
 - [ ] No PII in any published artifact.
