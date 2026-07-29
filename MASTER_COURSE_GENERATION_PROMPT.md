@@ -216,6 +216,7 @@ What is the correct way to do X?
 - Use `> [!IMPORTANT]` for critical setup steps, security warnings, and API key handling.
 - Hands-on lab must state the expected output so learners can verify success.
 - Concept Check questions must have at least one debugging or code-output-prediction question per lesson.
+- Technical terms, acronyms, methods, and math concepts must be wrapped in `<abbr title="Definition">term</abbr>` on first use per lesson for hover definitions (see `04_technical_term_glossary_guidelines.md`).
 
 **Banned phrases — rewrite any that appear:**
 
@@ -501,6 +502,7 @@ Before outputting any phase, verify every item below. Fix failures before presen
 - [ ] All academic citations include author, year, exact title, and arXiv/DOI link
 - [ ] No fabricated model names, version numbers, API parameters, or statistics
 - [ ] Each lesson is completable in ≤ 30 minutes (≤ ~1,500 words before an exercise)
+- [ ] Technical terms, acronyms, and math concepts are wrapped in `<abbr title="...">` on first use per lesson
 - [ ] Python notebooks include the Colab launch badge immediately after the title cell
 - [ ] metadata.json has every lesson registered exactly once, with correct `modes` entries
 - [ ] course-repo registration JSON has all 8 required fields with no placeholder text

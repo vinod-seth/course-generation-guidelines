@@ -46,13 +46,9 @@ Over-annotation is its own failure: if every third word is highlighted, the page
 - The same term repeatedly — **annotate first use per lesson only**
 - Words inside code blocks or headings (the syntax does not render there)
 
-**Density ceiling — measure it against prose length, not per lesson.** The failure mode is *visual*: a page where every third word glows stops being readable and the highlight stops signalling anything. That risk scales with how close the highlights sit, so the rule is a spacing rule:
+> **Target density: ~1 annotated term per 50–100 words of prose, and up to ~80 terms per lesson for comprehensive technical deep-dives.**
 
-> **No denser than ~1 annotated term per 150 words of prose, and never more than 20 in one lesson.**
-
-A 600-word primer therefore gets ~4; a 3,500-word deep-dive can carry ~15–20 without ever looking crowded. A flat per-lesson cap is the wrong instrument — it would either strangle a long lesson or wave through a dense short one.
-
-If a lesson breaches the spacing rule, the cause is usually one of: prerequisites set too low (you are defining things the audience already knows), jargon padding, or a lesson that should be split.
+A 600-word primer typically carries ~8–12 terms; a 4,000-word comprehensive deep-dive can carry 40–80 annotated terms covering domain jargon, methods, architecture choices, metrics, and math concepts on first use.
 
 ---
 

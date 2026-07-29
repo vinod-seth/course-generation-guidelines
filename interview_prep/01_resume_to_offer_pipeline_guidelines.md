@@ -177,6 +177,14 @@ Reference implementation: `local-courses-repo/Applied-Scientist-Interview-Gauntl
 5. **Model answers are revealable.** After attempting, the candidate can compare against a detailed model answer — deeper than a one-line definition, with `[FILL: metric]` where their own numbers belong.
 6. **Never rewards fabrication.** The evaluator must flag invented or oddly precise numbers; "I'd have to check the exact figure" is the correct answer.
 
+### No per-question company tags (overrides generic guideline 05)
+
+Generic guideline 05 asks for a `companies` tag on each interview question. **Resume-to-Offer courses omit it.** The whole course targets one company, locked in Chapter 0 and evidenced in Chapter 1 — so tagging an individual question `["Google", "Meta"]` is either noise or a contradiction of the course's premise. A question either belongs in this candidate's loop or it does not.
+
+Where a question genuinely varies by employer, express it as an `⚠️ JD-DEPENDENT` note in the explanation, not as a company tag.
+
+*(The portal hides its Target Company filter automatically when no question carries tags, so omitting the field is the whole change.)*
+
 ### Where it lives
 
 Rehearsal is authored in the chapter's **interview-questions JSON**, as a `rehearsal` object beside `experience_levels`, so the portal renders it at the top of that chapter's Interview Hub. Field definitions live in [generic guideline 05](../generic/05_quizzes_and_assessments_guidelines.md) — this section governs *which* chapters must carry one and *how the loop must behave*:
@@ -218,6 +226,7 @@ A chapter may *additionally* embed an inline drill in its markdown where rehears
 - [ ] Introduction includes per-round variants and an explicit omissions list.
 - [ ] Gap map is risk-weighted, time-boxed, and separates closable from structural gaps.
 - [ ] Every non-exempt chapter ships a spoken rehearsal (`rehearsal` block in its interview JSON): iterative, progressive feedback, never gating, questions drawn from that chapter.
+- [ ] No per-question `companies` tags — the target company is fixed in Chapter 0.
 - [ ] Readiness call is capable of returning "not ready".
 - [ ] No fabricated candidate metrics; unbacked numbers appear as [FILL: metric].
 - [ ] No PII in any published artifact.
